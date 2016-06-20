@@ -19,12 +19,14 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        for(var row=0;row<4;row++){
-            for(var col = 0;col<4;col++){
+        for(var row=0;row<5;row++){
+            for(var col = 0;col<5;col++){
                 var tile = cc.instantiate(this.tilePre);
                 this.node.addChild(tile);
                 // tile.setPosition(100+col,100+row);
-                tile.setPosition(tile.width*(col+1)+10,tile.height*(row+1)+10);
+                // tile.setPosition((tile.width+10)*col-100,(tile.height+10)*row-100);
+                tile.setPosition((tile.width+10)*col-((tile.width)*5)/2,(tile.height+10)*row-((tile.height)*5)/2);
+//                tile.setPosition(-((tile.width+10)*5)/2,-((tile.height+10)*5)/2);
             }
         }
     },

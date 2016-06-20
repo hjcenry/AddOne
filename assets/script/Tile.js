@@ -14,7 +14,7 @@ cc.Class({
         width:0,
         height:0,
         num:0,
-        color:new cc.Color(255, 68, 68,255),
+        bgColor:new cc.color(255, 68, 68,255),
         numLabel:{
             default:null,
             type:cc.Label
@@ -24,6 +24,7 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         var self = this;
+        self.bgColor = new cc.color(255, 68, 68,255);
         this.node.on(cc.Node.EventType.TOUCH_START, function(event){
             self.num +=1;
             self.numLabel.string = self.num;
