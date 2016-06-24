@@ -11,10 +11,7 @@ cc.Class({
         //    readonly: false,    // optional, default is false
         // },
         // ...
-        width:0,
-        height:0,
-        num:0,
-        bgColor:new cc.color(255, 68, 68,255),
+        bgColor:new cc.color(255, 255, 255,255),
         numLabel:{
             default:null,
             type:cc.Label
@@ -24,13 +21,20 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         var self = this;
-        self.bgColor = new cc.color(255, 68, 68,255);
-        this.node.on(cc.Node.EventType.TOUCH_START, function(event){
-            self.num +=1;
-            self.numLabel.string = self.num;
+        self.num = 1;
+        cc.log(self.color);
+        self.color = self.bgColor;
+        cc.log(self.color);
+        this.node.on(cc.Node.EventType.TOUCH_START,function(event){
+            self.setNum(self);
         }, this.node);
     },
-    
+
+    setNum:function(self){
+        self.num +=1;
+        self.numLabel.string = self.num;
+    }
+
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
 
