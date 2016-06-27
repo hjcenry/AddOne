@@ -5,6 +5,10 @@ cc.Class({
         gameName:{
             default:null,
             type:cc.Node
+        },
+        bg:{
+            default:null,
+            type:cc.Node
         }
     },
 

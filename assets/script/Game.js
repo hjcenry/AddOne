@@ -60,12 +60,13 @@ cc.Class({
         this.bg.height = cc.winSize.height;
         this.bg.setPosition(-cc.winSize.width/2,-cc.winSize.height/2);
         // 设置顶部背景层
-        this.topBg.width = cc.winSize.width;
+        this.topBg.width = cc.winSize.width-30;
+        this.topBg.height = this.scoreLabel.height;
         this.topBg.setPosition(-cc.winSize.width/2+15,cc.winSize.height/2-100);
         // 能量条背景层
         this.powerBarBg.width = cc.winSize.width-30;
         this.powerBarBg.height = this.powerBarBg.width/5/2;
-        this.powerBarBg.setPositionX(15-cc.winSize.width/2);
+        this.powerBarBg.setPosition(15-cc.winSize.width/2,this.topBg.getPositionY()-200);
         // 方块背景层
         this.tileBg.width = cc.winSize.width-30;
         this.tileBg.height = this.tileBg.width;

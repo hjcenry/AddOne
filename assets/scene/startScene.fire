@@ -135,6 +135,9 @@
     "_enabled": true,
     "gameName": {
       "__id__": 5
+    },
+    "bg": {
+      "__id__": 7
     }
   },
   {
