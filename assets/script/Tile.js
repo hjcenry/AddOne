@@ -24,6 +24,33 @@ cc.Class({
             self.setNum(parseInt(self.numLabel.string)+1,false);
         }, this.node);
     },
+    newTile:function(row,col){
+        this.node.setPosition(5+(5+this.node.width)*col+this.node.width/2,5+(5+this.node.height)*row+this.node.height/2);
+        this.node.setScale(0);
+        this.node.runAction(cc.scaleTo(0.1,1));
+    },
+    moveToArrPosition:function(row,col){
+        this.row = row;
+        this.col = col;
+        this.node.setPosition(5+(5+this.node.width)*col+this.node.width/2,5+(5+this.node.height)*row+this.node.height/2);
+        // var action = cc.moveTo(0.1,cc.p(5+(5+this.node.width)*col+this.node.width/2,5+(5+this.node.height)*row+this.node.height/2));
+        // this.node.runAction(
+        //     cc.sequence(
+        //         action,cc.callFunc(
+        //             function(node){
+        //                 node.destroy();
+        //             },
+        //             this.node,
+        //             this.node
+        //         ),
+        //     )
+        // );
+    },
+
+    setArrPosition:function(row,col){
+        this.row = row;
+        this.col = col;
+    },
 
     setNum:function(num,isInit){
         this.numLabel.string = num;
@@ -78,7 +105,9 @@ cc.Class({
                 break;
         }
         // 消除逻辑
-
+        if(!isInit){
+            this.game.operateLogic(this.row,this.col,parseInt(this.numLabel.string));
+        }
         // 能量条逻辑
         if(!isInit){
             var powers = this.game.powers;

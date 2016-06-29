@@ -105,16 +105,20 @@ cc.Class({
                         break;
                     }
                 }
+                tile.getComponent("Tile").setArrPosition(row,col);
                 this.tileBg.addChild(tile);
             }
         }
     },
     // 扫描四个方向
-    scanAround:function(row,col,lastRow,lastCol,num,arr){
+    scanAround:function(row,col,lastRow,lastCol,num,arr,scanArr){
         if(this.tiles[row][col]==null){
             return;
         }
         var isClear = false;
+        if(scanArr!=undefined){
+            scanArr.push(row+"#"+col);
+        }
         // 扫描上
         if(row<4&&(lastRow!=(row+1)||lastCol!=col)&&this.tiles[row+1][col]!=null){
             var nextNum = parseInt(this.tiles[row+1][col].getComponent("Tile").numLabel.string);
@@ -122,7 +126,7 @@ cc.Class({
                 if(arr.indexOf(row+"#"+col)==-1){
                     arr.push(row+"#"+col);
                 }
-                this.scanAround(row+1,col,row,col,num,arr);
+                this.scanAround(row+1,col,row,col,num,arr,scanArr);
                 isClear = true;
             }
         }
@@ -133,7 +137,7 @@ cc.Class({
                 if(arr.indexOf(row+"#"+col)==-1){
                     arr.push(row+"#"+col);
                 }
-                this.scanAround(row-1,col,row,col,num,arr);
+                this.scanAround(row-1,col,row,col,num,arr,scanArr);
                 isClear = true;
             }
         }
@@ -144,7 +148,7 @@ cc.Class({
                 if(arr.indexOf(row+"#"+col)==-1){
                     arr.push(row+"#"+col);
                 }
-                this.scanAround(row,col-1,row,col,num,arr);
+                this.scanAround(row,col-1,row,col,num,arr,scanArr);
                 isClear = true;
             }
         }
@@ -155,7 +159,7 @@ cc.Class({
                 if(arr.indexOf(row+"#"+col)==-1){
                     arr.push(row+"#"+col);
                 }
-                this.scanAround(row,col+1,row,col,num,arr);
+                this.scanAround(row,col+1,row,col,num,arr,scanArr);
                 isClear = true;
             }
         }
@@ -165,6 +169,36 @@ cc.Class({
             if(curNum==num){
                 if(arr.indexOf(row+"#"+col)==-1){
                     arr.push(row+"#"+col);
+                }
+            }
+        }
+    },
+
+    operateLogic:function(touchRow,touchCol,curNum){
+        var arr = new Array();
+        var scanArr = new Array();
+        this.scanAround(touchRow,touchCol,-1,-1,curNum,arr,scanArr);
+        if(arr.length>=3){
+            for(var index in arr){
+                var row = arr[index].split("#")[0];
+                var col = arr[index].split("#")[1];
+                console.log("debug"+index+" pos:row-"+row+",col-"+col);
+                console.log("debug"+index+" tile:"+this.tiles[row][col].getComponent("Tile").numLabel.string);
+                console.log("debug"+index+" pos:touchRow-"+touchRow+",touchCol-"+touchCol);
+                if(row!=touchRow||col!=touchCol){
+                    // 执行移动动作                    
+                    this.tiles[row][col].getComponent("Tile").moveToArrPosition(touchRow,touchCol);
+                    // 生成新方块
+                    var tile = cc.instantiate(this.tilePre);
+                    tile.getComponent("Tile").game = this;
+                    tile.width = (this.tileBg.width-30)/5;
+                    tile.height = (this.tileBg.height-30)/5;
+                    var maxRandom = 5;
+                    var randomNum = Math.ceil(Math.random()*maxRandom);
+                    tile.getComponent("Tile").setNum(randomNum,true);
+                    tile.getComponent("Tile").newTile(row,col);
+                    this.tiles[row][col] = tile;
+                    this.tileBg.addChild(tile);
                 }
             }
         }

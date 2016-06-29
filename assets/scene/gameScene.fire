@@ -67,8 +67,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1080,
-      "height": 1920
+      "width": 750,
+      "height": 1334
     },
     "_children": [
       {
@@ -90,8 +90,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 540,
-      "y": 960
+      "x": 375,
+      "y": 667
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -136,8 +136,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1118,
-      "height": 1961
+      "width": 928,
+      "height": 1461
     },
     "_children": [],
     "_rotationX": 0,
@@ -146,8 +146,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -552,
-      "y": -978
+      "x": -462,
+      "y": -748
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -215,8 +215,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1031,
-      "height": 1379
+      "width": 672,
+      "height": 825
     },
     "_children": [],
     "_rotationX": 0,
@@ -225,8 +225,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -516,
-      "y": -939
+      "x": -334,
+      "y": -630
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -294,8 +294,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 985,
-      "height": 89
+      "width": 675,
+      "height": 105
     },
     "_children": [],
     "_rotationX": 0,
@@ -304,8 +304,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -517,
-      "y": 487
+      "x": -334,
+      "y": 228
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -390,8 +390,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -512,
-      "y": 596
+      "x": -332,
+      "y": 389
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -560,8 +560,8 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 1080,
-      "height": 1920
+      "width": 750,
+      "height": 1334
     },
     "_fitWidth": false,
     "_fitHeight": false
