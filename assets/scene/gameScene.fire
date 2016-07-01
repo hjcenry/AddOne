@@ -496,7 +496,7 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_contentSize": {
@@ -599,6 +599,7 @@
     },
     "powerBarBg": {
       "__id__": 7
-    }
+    },
+    "maxNum": 0
   }
 ]
