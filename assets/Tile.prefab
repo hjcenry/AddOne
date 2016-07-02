@@ -91,8 +91,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 22.25,
-      "height": 40
+      "width": 33.37,
+      "height": 60
     },
     "_children": [],
     "_rotationX": 0,
@@ -132,8 +132,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 60,
+    "_lineHeight": 60,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -186,12 +186,11 @@
       "__id__": 1
     },
     "_enabled": true,
-    "width": 0,
-    "height": 0,
-    "num": 0,
-    "color": null,
     "numLabel": {
       "__id__": 3
+    },
+    "clickEffect": {
+      "__uuid__": "fb4e67ab-d360-4028-a69d-daebe2f3d9a7"
     }
   },
   {

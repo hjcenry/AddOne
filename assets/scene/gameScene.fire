@@ -104,10 +104,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 14
+        "__id__": 15
       },
       {
-        "__id__": 15
+        "__id__": 16
       }
     ],
     "_prefab": null,
@@ -357,9 +357,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 112,
+      "g": 86,
+      "b": 86,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -373,8 +373,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 633,
+      "height": 100
     },
     "_children": [
       {
@@ -390,8 +390,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -332,
-      "y": 389
+      "x": -327,
+      "y": 384
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -400,9 +400,13 @@
     "_tag": -1,
     "_opacityModifyRGB": false,
     "_reorderChildDirty": false,
-    "_id": "48cc3aFicJInLnH2fYm99bW",
+    "_id": "b01f59xJ39O74cOmqybkqZv",
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 14
+      }
+    ],
     "_prefab": null,
     "groupIndex": 0
   },
@@ -413,9 +417,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -429,8 +433,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120,
-      "height": 40
+      "width": 240,
+      "height": 80
     },
     "_children": [],
     "_rotationX": 0,
@@ -439,8 +443,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 60,
-      "y": 20
+      "x": 160,
+      "y": 45
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -468,8 +472,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 80,
+    "_lineHeight": 80,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -485,9 +489,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -501,8 +505,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 22.25,
-      "height": 40
+      "width": 44.49,
+      "height": 80
     },
     "_children": [],
     "_rotationX": 0,
@@ -511,8 +515,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 120,
-      "y": 20
+      "x": 240,
+      "y": 45
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -540,8 +544,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 80,
+    "_lineHeight": 80,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -549,6 +553,32 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 9
+    },
+    "_enabled": true,
+    "_spriteFrame": {
+      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_atlas": null
   },
   {
     "__type__": "cc.Canvas",
@@ -600,6 +630,31 @@
     "powerBarBg": {
       "__id__": 7
     },
-    "maxNum": 0
+    "star1": {
+      "__uuid__": "05bf9fa7-efc4-4037-b0f4-cda951790870"
+    },
+    "star2": {
+      "__uuid__": "8a0cde0b-ffc3-4b57-affc-e90515d79949"
+    },
+    "star3": {
+      "__uuid__": "c226564b-db2a-4682-b673-792e61acc905"
+    },
+    "star4": {
+      "__uuid__": "0596d9b9-8b8b-4a10-91a8-bb84ba85e29a"
+    },
+    "star5": {
+      "__uuid__": "378fe748-14af-4f6d-b31f-c0c099c3f3bb"
+    },
+    "star6": {
+      "__uuid__": "df4c2c0b-f644-4838-8a23-10c8934ba69b"
+    },
+    "star7": {
+      "__uuid__": "bd1eef32-9795-402e-92be-74c7922aeb88"
+    },
+    "bgMusic": {
+      "__uuid__": "3bb1f01d-59ae-43b2-80a2-12b2e9cbf102"
+    },
+    "maxNum": 0,
+    "isCal": false
   }
 ]

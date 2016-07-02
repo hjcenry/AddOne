@@ -138,6 +138,12 @@
     },
     "bg": {
       "__id__": 7
+    },
+    "startBtn": {
+      "__id__": 9
+    },
+    "btnEffect": {
+      "__uuid__": "adb6993d-cc33-4bca-9c3b-e009b7b216ec"
     }
   },
   {
