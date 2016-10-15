@@ -102,6 +102,16 @@ cc.Class({
             power.color = Colors.power;
             this.powers[i] = power;
         };
+        // 计算生成方块数字的概率
+        var gailv = new Array();
+        this.maxNum = 8;
+        for(var num = 0;num<this.maxNum-3;num++){
+            gailv[num] = this.maxNum-3-num;
+        }
+        var sum = 0;
+        for(var num = 0;num<gailv.length;num++){
+            sum += gailv[num];
+        }
         // 生成初始方块
         for(var row=0;row<5;row++){
             for(var col = 0;col<5;col++){
@@ -110,20 +120,31 @@ cc.Class({
                 tile.width = (this.tileBg.width-30)/5;
                 tile.height = (this.tileBg.height-30)/5;
                 var count = 0;
-                var maxRandom = 5;
+                // var maxRandom = 8;
                 var randomNum = 0;
                 while(true){
                     count++;
                     var arr = new Array();
                     var scanArr = new Array();
-                    if(count>10){
-                        maxRandom++;
+                    // if(count>10){
+                    //     maxRandom++;
+                    // }
+                    // randomNum = Math.ceil(Math.random()*maxRandom);
+                    randomNum = Math.random()*sum;
+                    var newNum = 0;
+                    var min = 0;
+                    for(var num = 0;num<gailv.length;num++){
+                        if(randomNum>=min&&randomNum<=min+gailv[num]){
+                            newNum = num+1;
+                            break;
+                        }else{
+                            min = min + gailv[num];
+                        }
                     }
-                    randomNum = Math.ceil(Math.random()*maxRandom);
-                    tile.getComponent("Tile").setNum(randomNum,false,false);
+                    tile.getComponent("Tile").setNum(newNum,false,false);
                     tile.setPosition(5+(5+tile.width)*col+tile.width/2,5+(5+tile.height)*row+tile.height/2);
                     this.tiles[row][col] = tile;
-                    this.scanAround(row,col,-1,-1,randomNum,arr,scanArr);
+                    this.scanAround(row,col,-1,-1,newNum,arr,scanArr);
                     if(arr.length<3){
                         break;
                     }
@@ -308,6 +329,27 @@ cc.Class({
             }
         }
         this.scheduleOnce(function() {
+            // 计算生成方块数字的概率
+            var gailv = new Array();
+            // for(var num = 0;num<this.maxNum;num++){
+            //     gailv[num] = 0;
+            // }
+            for(var num = 0;num<this.maxNum-3;num++){
+                gailv[num] = this.maxNum-3-num;
+            }
+            // for(var num = 0;num<this.maxNum;num++){
+            //     for (var col = 0; col < 5; col++) {
+            //         for (var row = 0; row < 5; row++) {
+            //             if(this.tiles[row][col]!=null&&parseInt(this.tiles[row][col].getComponent("Tile").numLabel.string)==num+1){
+            //                 gailv[num]+=1;
+            //             }
+            //         }
+            //     }
+            // }
+            var sum = 0;
+            for(var num = 0;num<gailv.length;num++){
+                sum += gailv[num];
+            }
             // 0.3s后生成新方块
             for (var col = 0; col < 5; col++) {
                 for (var row = 0; row < 5; row++) {
@@ -316,9 +358,20 @@ cc.Class({
                         tile.getComponent("Tile").game = this;
                         tile.width = (this.tileBg.width-30)/5;
                         tile.height = (this.tileBg.height-30)/5;
-                        var maxRandom = this.maxNum;
-                        var randomNum = Math.ceil(Math.random()*maxRandom);
-                        tile.getComponent("Tile").setNum(randomNum,false,false);
+                        // var maxRandom = this.maxNum;
+                        // var randomNum = Math.ceil(Math.random()*maxRandom);
+                        var randomNum = Math.random()*sum;
+                        var newNum = 0;
+                        var min = 0;
+                        for(var num = 0;num<gailv.length;num++){
+                            if(randomNum>=min&&randomNum<=min+gailv[num]){
+                                newNum = num+1;
+                                break;
+                            }else{
+                                min = min + gailv[num];
+                            }
+                        }
+                        tile.getComponent("Tile").setNum(newNum,false,false);
                         tile.getComponent("Tile").newTile(row,col);
                         this.tiles[row][col] = tile;
                         this.tileBg.addChild(tile);

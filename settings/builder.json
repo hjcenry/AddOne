@@ -1,0 +1,13 @@
+{
+  "excludeScenes": [],
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": true,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.AddOne",
+  "startScene": "c07079b4-4d11-4903-bb32-802a69637cab",
+  "title": "AddOne",
+  "webOrientation": "portrait"
+}
